@@ -1,14 +1,15 @@
 {
-  "name": "tinymce-pm-skin",
+  "name": "@platinbox/tinymce-pm-skin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Platinmarket tinymce skin",
   "main": "Gruntfile.js",
   "scripts": {
+    "build": "grunt",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "@ephox/bolt": "^1.6.0",
     "@ephox/imagetools": "2.0.0",
     "@ephox/mcagar": "^1.1.1",
