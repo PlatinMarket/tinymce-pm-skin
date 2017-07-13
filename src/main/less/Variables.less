@@ -5,7 +5,7 @@
 @prefix:                         mce;
 
 // Default font
-@font-family:                    "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family:                    Roboto, 'Helvetica Neue', sans-serif;
 @font-size:                      14px;
 @line-height:                    20px;
 @has-gradients:                  false;
@@ -228,5 +228,5 @@
 // However by comparing the rendering of adding/removing a forced line height 1.3 seems closer to the truth for
 // the default font in tinymce and having a slightly higher value probably improves readability anyway.
 @content-line-height:            1.3;
-@content-font-family:            Verdana, Arial, Helvetica, sans-serif;
+@content-font-family:            @font-family;
 @content-font-size:              14px;
