@@ -1,19 +1,51 @@
 // ButtonGroup
 
+.@{prefix}-btn-group{
+  .box-shadow(0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12));
+  margin: 3px !important;
+  .border-radius(2px);
+  display: inline-flex !important;
+}
+
 .btn-group-border-left(@border-color) when (@has-button-borders = true) {
-  border-left: 1px solid @border-color;
+  border-left: 0;
 }
 
 .btn-group-border-right(@border-color) when (@has-button-borders = true) {
-  border-right: 1px solid @border-color;
+  border-right: 0;
 }
 
 
 .@{prefix}-btn-group .@{prefix}-btn {
   border-width: @btn-group-border-width;
   margin: 0;
+  background: @btn-group-btn-bg;
   .border-radius(0);
-  margin-left: @flow-layout-spacing;
+  display: inline-flex;
+
+  button{
+    height: @btn-group-btn-height;
+    line-height: @btn-group-btn-line-height;
+    padding: @btn-group-btn-padding;
+  }
+
+  button, i{
+    color: @btn-group-btn-color;
+  }
+
+  &.@{prefix}-active{
+    background-color: @btn-group-btn-active-bg;
+    button, i{
+      color: @btn-group-btn-active-color;
+    }
+  }
+
+  &.@{prefix}-disabled{
+    background-color: @btn-group-btn-disabled-bg;
+    button, i{
+      color: @btn-group-btn-disabled-color;
+    }
+  }
 }
 
 .@{prefix}-btn-group .@{prefix}-btn when (@has-button-borders = true) {
@@ -23,29 +55,29 @@
 }
 
 .@{prefix}-btn-group:not(:first-child) when (@has-button-borders = true) {
-  padding-left: 1px;
-  margin-left: 1px;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .@{prefix}-btn-group:not(:first-child) when (@has-button-borders = false) {
-  border-left: 1px solid darken(@btn-bg, 15%);
-  padding-left: @flow-layout-spacing + 1px;
-  margin-left: @flow-layout-spacing + 1px;
+  border-left: 0;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .@{prefix}-btn-group .@{prefix}-first {
-  .border-radius(3px 0 0 3px);
+  .border-radius(2px 0 0 2px);
   .btn-group-border-left(@btn-border-left);
   margin-left: 0;
 }
 
 .@{prefix}-btn-group .@{prefix}-last {
-  .border-radius(0 3px 3px 0);
+  .border-radius(0 2px 2px 0);
   .btn-group-border-right(@btn-border-right);
 }
 
 .@{prefix}-btn-group .@{prefix}-first.@{prefix}-last {
-  .border-radius(3px);
+  .border-radius(2px);
 }
 
 .@{prefix}-btn-group .@{prefix}-btn.@{prefix}-flow-layout-item {
@@ -56,7 +88,7 @@
 
 .@{prefix}-rtl .@{prefix}-btn-group .@{prefix}-btn {
   margin-left: 0;
-  margin-right: @flow-layout-spacing;
+  margin-right: 0;
 }
 
 .@{prefix}-rtl .@{prefix}-btn-group .@{prefix}-first {
@@ -65,7 +97,7 @@
 
 .@{prefix}-rtl .@{prefix}-btn-group:not(:first-child) {
   border-left: none;
-  border-right:1px solid darken(@btn-bg, 15%);
-  padding-right: @flow-layout-spacing + 2px;
-  margin-right: @flow-layout-spacing + 2px;
+  border-right: 0;
+  padding-right: 0;
+  margin-right: 0;
 }

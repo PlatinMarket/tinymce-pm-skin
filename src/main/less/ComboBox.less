@@ -19,13 +19,13 @@
 }
 
 .@{prefix}-combobox.@{prefix}-has-open input {
-  .border-radius(4px 0 0 4px);
+  .border-radius(2px 0 0 2px);
 }
 
 .@{prefix}-combobox .@{prefix}-btn {
   border: 1px solid @textbox-border;
   border-left: 0;
-  .border-radius(0 4px 4px 0);
+  .border-radius(0 2px 2px 0);
   margin: 0;
 }
 
@@ -71,27 +71,15 @@
 
 .@{prefix}-menu.@{prefix}-combobox-menu {
   border-top: 0;
-  margin-top: 0;
+  margin-top: 4px;
   max-height: 200px;
+  margin-left: 1px;
 
   .@{prefix}-menu-item {
-    padding: 4px 6px 4px 4px;
-    font-size: 11px;
+    padding: 6px 16px;
   }
 
   .@{prefix}-menu-item-sep {
     padding: 0;
-  }
-
-  .@{prefix}-text {
-    font-size: 11px;
-  }
-
-  .@{prefix}-menu-item-link, .@{prefix}-menu-item-link b {
-    font-size: 11px;
-  }
-
-  .@{prefix}-text b {
-    font-size: 11px;
   }
 }

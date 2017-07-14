@@ -9,7 +9,7 @@
 @font-size:                      14px;
 @line-height:                    20px;
 @has-gradients:                  false;
-@has-radius:                     false;
+@has-radius:                     true;
 @has-boxshadow:                  false;
 @has-button-borders:             false;
 
@@ -17,7 +17,7 @@
 @text:                           #333;
 @text-inverse:                   white;
 @text-disabled:                  #aaa;
-@text-shadow:                    0 1px 1px hsla(hue(@text-inverse), saturation(@text-inverse), lightness(@text-inverse), 0.75);
+@text-shadow:                    none;
 @text-error:                     #b94a48;
 @text-warning:                   #c09853;
 @text-success:                   #468847;
@@ -32,16 +32,16 @@
 @btn-border-left:                transparent;
 @btn-caret-border:               @btn-text;
 @btn-text-disabled:              @text-disabled;
-@btn-box-shadow:                 inset 0 1px 0 rgba(255, 255, 255, .2), 0 1px 2px rgba(0, 0, 0, .05);
-@btn-box-shadow-active:          inset 0 2px 4px rgba(0, 0, 0, .15), 0 1px 2px rgba(0, 0, 0, .05);
-@btn-box-disabled-opacity:       0.4;
+@btn-box-shadow:                 none;
+@btn-box-shadow-active:          none;
+@btn-box-disabled-opacity:       1;
 @btn-bg:                         white;
-@btn-bg-hlight:                  #D9D9D9;
-@btn-bg-hover:                   darken(@btn-bg, 5%);
-@btn-bg-hlight-hover:            darken(@btn-bg-hlight, 5%);
-@btn-border-hover:               darken(@btn-bg, 20%);
-@btn-border-active:              darken(@btn-bg, 20%);
-@btn-padding:                    4px 8px;
+@btn-bg-hlight:                  #e0e0e0;
+@btn-bg-hover:                   @btn-bg;
+@btn-bg-hlight-hover:            @btn-bg-hlight;
+@btn-border-hover:               none;
+@btn-border-active:              none;
+@btn-padding:                    0px 16px;
 
 @btn-primary-bg:                 #2980b9;
 @btn-primary-bg-hlight:          #3498db;
@@ -57,40 +57,40 @@
 @btn-primary-border-hover:       transparent;
 
 // Button group
-@btn-group-border-width:         1px;
+@btn-group-border-width:         0;
 
 // Menu
 @menuitem-text:                  @text;
 @menu-bg:                        #fff;
-@menu-margin:                    -1px 0 0;
-@menu-border:                    rgba(0, 0, 0, 0.2);
+@menu-margin:                    4px 0 0;
+@menu-border:                    transparent;
 @menubar-border:                 mix(@panel-border, @panel-bg, 60%);
-@menuitem-text-inverse:          @text-inverse;
+@menuitem-text-inverse:          #333;
 @menubar-bg-active:              darken(@btn-bg, 10%);
 @menuitem-bg-hover:              #0081C2;
-@menuitem-bg-selected:           #2980b9;
-@menuitem-bg-selected-hlight:    #3498db;
+@menuitem-bg-selected:           rgba(158, 158, 158, 0.2);
+@menuitem-bg-selected-hlight:    rgba(158, 158, 158, 0.2);
 @menuitem-bg-disabled:           #CCC;
 @menuitem-caret:                 @menuitem-text;
 @menuitem-caret-selected:        @menuitem-text-inverse;
 @menuitem-separator-top:         transparent;
 @menuitem-separator-bottom:      rgba(0,0,0,0.1);
-@menuitem-bg-active:             #3498db;
-@menuitem-text-active:           @text-inverse;
+@menuitem-bg-active:             rgba(158, 158, 158, 0.2);
+@menuitem-text-active:           #333;
 @menuitem-preview-border-active: #aaa;
 @menubar-menubtn-text:           #333;
 
 // Panel
-@panel-border:                   rgba(0,0,0,.2);
-@panel-bg:                       #FDFDFD;
-@panel-bg-hlight:                #DDD;
+@panel-border:                   #bdbdbd;
+@panel-bg:                       transparent;
+@panel-bg-hlight:                transparent;
 
 // Tabs
 @tab-border:                     #c5c5c5;
 @tab-bg:                         #ffffff;
 @tab-bg-hover:                   #FDFDFD;
 @tab-bg-active:                  #FDFDFD;
-@tabs-bg:             #FFF;
+@tabs-bg:                        #FFF;
 
 // Tooltip
 @tooltip-bg:                     #000;
@@ -133,16 +133,16 @@
 @infobox-error-text:             @notification-error-text;
 
 // Window
-@window-border:                  #c5c5c5;
-@window-head-border:             @window-border;
+@window-border:                  none;
+@window-head-border:             none;
 @window-head-close:              mix(@text, @window-bg, 60%);
 @window-head-close-hover:        mix(@text, @window-bg, 40%);
-@window-foot-border:             @window-border;
+@window-foot-border:             none;
 @window-foot-bg:                 @window-bg;
 @window-fullscreen-bg:           #FFF;
-@window-modalblock-bg:           #000;
-@window-modalblock-opacity:      0.3;
-@window-box-shadow:              0 3px 7px rgba(0, 0, 0, 0.3);
+@window-modalblock-bg:           rgba(0, 0, 0, 0.6);
+@window-modalblock-opacity:      0.48;
+@window-box-shadow:              0 11px 15px -7px rgba(0,0,0,.2), 0 24px 38px 3px rgba(0,0,0,.14), 0 9px 46px 8px rgba(0,0,0,.12);
 @window-bg:                      #FFF;
 @window-title-font-size:         20px;
 
@@ -170,10 +170,10 @@
 
 // Textbox
 @textbox-text-placeholder:       #aaa;
-@textbox-box-shadow:             inset 0 1px 1px rgba(0, 0, 0, 0.075);
+@textbox-box-shadow:             none;
 @textbox-bg:                     #fff;
-@textbox-border:                 #c5c5c5;
-@textbox-border-focus:           #3498db;
+@textbox-border:                 #bdbdbd;
+@textbox-border-focus:           #3f51b5;
 
 // Selectbox
 @selectbox-bg:                   @textbox-bg;
@@ -230,3 +230,20 @@
 @content-line-height:            1.3;
 @content-font-family:            @font-family;
 @content-font-size:              14px;
+
+
+
+// customization
+
+@btn-group-btn-height:           32px;
+@btn-group-btn-line-height:      16px;
+@btn-group-btn-padding:          0 8px;
+
+@btn-group-btn-bg:               #fff;
+@btn-group-btn-active-bg:        #e0e0e0;
+@btn-group-btn-disabled-bg:      #eee;
+
+
+@btn-group-btn-color:            #666;
+@btn-group-btn-active-color:     @text;
+@btn-group-btn-disabled-color:   rgba(0,0,0,.38);

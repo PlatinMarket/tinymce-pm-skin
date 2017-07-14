@@ -3,21 +3,26 @@
 .@{prefix}-textbox {
   background: @textbox-bg;
   border: 1px solid @textbox-border;
-  .border-radius(3px);
+  .border-radius(2px);
   .box-shadow(@textbox-box-shadow);
   display: inline-block;
-  .transition(~"border linear .2s, box-shadow linear .2s");
-  height: 28px;
   resize: none;
-  padding: 0 4px 0 4px;
+  padding: 6px 12px;
   white-space: pre-wrap;
   *white-space: pre;
   color: @text;
+  line-height: 1.42857143;
+
+  &:not(.@{prefix}-multiline){
+    height: 34px !important;
+    width: auto !important;
+    box-sizing: border-box;
+  }
 }
 
 .@{prefix}-textbox:focus, .@{prefix}-textbox.@{prefix}-focus {
-  border-color: @textbox-border-focus;
-  .box-shadow(inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px fadeout(@textbox-border-focus, 15%));
+  border-bottom-color: @textbox-border-focus;
+  .box-shadow(0 1px 0 @textbox-border-focus);
 }
 
 .@{prefix}-placeholder .@{prefix}-textbox {

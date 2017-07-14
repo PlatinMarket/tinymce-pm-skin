@@ -33,6 +33,7 @@ div.@{prefix}-fullscreen {
 div.@{prefix}-edit-area {
   background: #FFF;
   filter: none;
+  border: none !important;
 }
 
 .@{prefix}-statusbar {
@@ -140,7 +141,7 @@ div.@{prefix}-tinymce-inline {
 // Reduce double margins between toolbar rows
 
 .@{prefix}-toolbar-grp when (@has-button-borders = false) {
-  padding: @flow-layout-spacing 0;
+  padding: @flow-layout-spacing;
 }
 
 .@{prefix}-toolbar-grp when (@has-button-borders = true) {

@@ -28,7 +28,7 @@ div.@{prefix}-fullscreen {
 }
 
 .@{prefix}-window {
-  .border-radius(6px);
+  .border-radius(2px);
   .box-shadow(@window-box-shadow);
   .reset-gradient();
   background: @window-bg;
@@ -37,6 +37,7 @@ div.@{prefix}-fullscreen {
   opacity: 0;
   transform: scale(0.1);
   transition: transform 100ms ease-in, opacity 150ms ease-in;
+  border-width: 0!important;
 }
 
 .@{prefix}-window.@{prefix}-in {
@@ -45,15 +46,16 @@ div.@{prefix}-fullscreen {
 }
 
 .@{prefix}-window-head {
-  padding: 9px 15px;
-  border-bottom: 1px solid @window-head-border;
+  padding: 20px 20px 0px 20px;
+  margin: 0;
+  border-bottom: 0!important;
   position: relative;
 }
 
 .@{prefix}-window-head .@{prefix}-close {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 8px;
+  top: 20px;
   height: 38px;
   width: 38px;
   text-align: center;
@@ -69,11 +71,8 @@ div.@{prefix}-fullscreen {
 }
 
 .@{prefix}-window-head .@{prefix}-title {
-  line-height: 20px;
-  font-size: @window-title-font-size;
-  font-weight: bold;
+  font: 500 20px/32px Roboto,Helvetica Neue,sans-serif;
   text-rendering: optimizelegibility;
-  padding-right: 20px;
 }
 
 .@{prefix}-window .@{prefix}-container-body {
@@ -83,8 +82,27 @@ div.@{prefix}-fullscreen {
 .@{prefix}-foot {
   display: block;
   background-color: @window-foot-bg;
-  border-top: 1px solid @window-foot-border;
-  .border-radius(0 0 6px 6px);
+  border-top: 0!important;
+  .border-radius(2px);
+
+  .@{prefix}-abs-layout{
+    padding: 0 20px !important;
+    box-sizing: border-box;
+    position: relative;
+    .@{prefix}-btn{
+      margin-left: -10px;
+      top: 0 !important;
+    }
+  }
+
+  .@{prefix}-btn button {
+    line-height: 36px;
+    .border-radius(2px);
+    span{
+      font-weight: 500;
+    }
+  }
+
 }
 
 .@{prefix}-window-head .@{prefix}-dragh {
@@ -104,9 +122,35 @@ div.@{prefix}-fullscreen {
   .border-radius(0);
 }
 
-.@{prefix}-window-body .@{prefix}-listbox {
-  border-color: @btn-border-hover;
+.@{prefix}-window-body {
+  .@{prefix}-listbox button {
+    text-align: left;
+    position: relative;
+    height: 34px;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    box-sizing: border-box;
+    background: @textbox-bg;
+    border: 1px solid @textbox-border;
+    .border-radius(2px);
+    .box-shadow(none);
+
+  }
+
+
+  .@{prefix}-listbox.@{prefix}-active{
+    button{
+      border-bottom-color: @textbox-border-focus !important;
+      .box-shadow(0 1px 0 @textbox-border-focus);
+    }
+  }
+
+  .@{prefix}-listbox .@{prefix}-caret {
+    right: 12px;
+  }
 }
+
+
 
 // RTL
 

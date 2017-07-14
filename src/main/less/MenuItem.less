@@ -2,16 +2,14 @@
 
 .@{prefix}-menu-item {
   display: block;
-  padding: 6px 15px 6px 12px;
+  padding: 6px 16px;
   clear: both;
   font-weight: normal;
-  line-height: 20px;
   color: @menuitem-text;
   white-space: nowrap;
   cursor: pointer;
-  line-height: normal;
   border-left: 4px solid transparent;
-  margin-bottom: 1px;
+  margin: 0 !important;
 }
 
 .@{prefix}-menu-item .@{prefix}-ico, .@{prefix}-menu-item .@{prefix}-text {
@@ -126,7 +124,7 @@ div.@{prefix}-menu .@{prefix}-menu-item-sep, .@{prefix}-menu-item-sep:hover {
   border: 0;
   padding: 0;
   height: 1px;
-  margin: 9px 1px;
+  margin: 8px 0px!important;
   overflow: hidden;
   background: @menuitem-separator-top;
   border-bottom: 1px solid @menuitem-separator-bottom;
