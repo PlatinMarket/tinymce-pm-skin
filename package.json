@@ -1,6 +1,6 @@
 {
   "name": "@platinbox/tinymce-pm-skin",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Platinmarket tinymce skin",
   "main": "Gruntfile.js",
   "scripts": {
